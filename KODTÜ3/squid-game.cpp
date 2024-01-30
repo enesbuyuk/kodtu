@@ -1,9 +1,8 @@
 //GitHub.com/EnesBuyuk
 //Problem: https://arsiv.cclub.metu.edu.tr/problem/22marbles/
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-bool findTF(int const& x, int const& y, vector<int>& calculatedFalseValues, int& notFound, int& diff) {
+bool findTF(int x, int y, vector<int>& calculatedFalseValues, int& notFound, int& diff) {
     calculatedFalseValues.insert(calculatedFalseValues.end(), {0,2,1});
     if (x == 0) return y != 0;
     if (x == 1) return y != 2;
@@ -22,6 +21,8 @@ bool findTF(int const& x, int const& y, vector<int>& calculatedFalseValues, int&
     return y != calculatedFalseValues[x];
 }
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
     int numberofMatches, notFound = 3, diff = 2;
     vector<int> calculatedFalseValues(850000);
     cin >> numberofMatches;
